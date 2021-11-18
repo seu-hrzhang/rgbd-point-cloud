@@ -8,9 +8,9 @@ This project is an implementation of point cloud generator using RGBD images. Th
 
 This program was built and tested on Ubuntu 18.04 (running on Windows not recommended). The following dependencies are required:
 
-* Mask R-CNN
-* OpenCV (ver. 4.5.x)
-* PCL (ver. 1.12.0 or later)
+* [Mask R-CNN](https://github.com/facebookresearch/maskrcnn-benchmark)
+* [OpenCV](https://opencv.org) (ver. 4.5.2 or later)
+* [PCL](https://pointclouds.org) (ver. 1.12.0 or later)
 * other dependencies required by the above
 
 Please make sure they are properly installed before running this program.
@@ -19,7 +19,7 @@ Please make sure they are properly installed before running this program.
 
 ### Configurations
 
-The `config` folder in the root directory stores configuration files of the program.
+The `/config` folder in the root directory stores configuration files of the program.
 
 Paths of image dataset and output files are configured in `path.json`. A demo of `path.json` is as follows:
 
@@ -51,7 +51,11 @@ Your project directory should be similar to
 │   +── rgbd-point-cloud
 ```
 
-### Image Segmentation
+### Running Program
 
-1. Train and evaluate Mask R-CNN network using your custom dataset following the [official setup manual](https://github.com/facebookresearch/maskrcnn-benchmark).
-2. Copy (or move) and run `run.py` in the `/demo` directory of `/maskrcnn-benchmark`.
+1. Train and evaluate Mask R-CNN network using your custom dataset.
+2. Create `/mask` directory in `/root`
+3. Copy (or move) and run `run.py` in the `/demo` directory of `/maskrcnn-benchmark`.
+4. Build and run the project.
+
+The output file in in `.json` format, including 3D coordinates of the target object. Multiple items will be listed in the output file if more than one targets exist in the source image.
