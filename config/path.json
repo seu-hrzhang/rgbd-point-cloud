@@ -1,0 +1,7 @@
+{
+    "rgb_dir": "../maskrcnn-benchmark/datasets/rgb/",
+    "depth_dir": "../maskrcnn-benchmark/datasets/depth/",
+    "mask_dir": "../mask/",
+    "mask_file": "./masks.txt",
+    "output_dir": "../output/"
+}

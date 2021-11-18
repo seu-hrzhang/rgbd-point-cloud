@@ -25,8 +25,8 @@ Paths of image dataset and output files are configured in `path.json`. A demo of
 
 ```json
 {
-    "rgb_dir": "../maskrcnn-benchmark/datasets/rgb/",
-    "depth_dir": "../maskrcnn-benchmark/datasets/depth/",
+    "rgb_dir": "../../maskrcnn-benchmark/datasets/rgb/",
+    "depth_dir": "../../maskrcnn-benchmark/datasets/depth/",
     "mask_dir": "../mask/",
     "mask_file": "./masks.txt",
     "output_dir": "../output/"
@@ -39,23 +39,27 @@ Your project directory should be similar to
 
 ```
 +── root
-│   +── config
-|   |   +── masks.txt
-|   |   +── path.json
-│   +── mask
 │   +── maskrcnn-benchmark
+|   |   +── datasets
+|   |   |   +── rgb
+|   |   |   +── depth
+|   |   |   +── ...
 |   |   +── demo
 |   |   |   +── run.py
 |   |   |   +── ...
 |   |   ...
 │   +── rgbd-point-cloud
+|   │   +── config
+|   |   |   +── masks.txt
+|   |   |   +── path.json
+|   │   +── mask
+|   │   +── output
 ```
 
 ### Running Program
 
 1. Train and evaluate Mask R-CNN network using your custom dataset.
-2. Create `/mask` directory in `/root`
-3. Copy (or move) and run `run.py` in the `/demo` directory of `/maskrcnn-benchmark`.
-4. Build and run the project.
+2. Copy (or move) and run `run.py` in the `/demo` directory of `/maskrcnn-benchmark`.
+3. Build and run the project.
 
-The output file in in `.json` format, including 3D coordinates of the target object. Multiple items will be listed in the output file if more than one targets exist in the source image.
+The output file is in `.json` format, including 3D coordinates of the target object. Multiple items will be listed in the output file if more than one targets exist in the source image.
